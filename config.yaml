@@ -1,0 +1,17 @@
+# MinIO 连接
+endpoint: "http://172.20.90.11:8009"
+use_ssl: false          # 自签 https 改 true
+access_key: "123456"
+secret_key: "inspuR12345"
+region: "us-east-1"     # MinIO 随意，保持默认
+bucket: "origin-bucket"
+dest: "/data/oss_dump"
+
+concurrency: 32
+part_size_mib: 64
+max_retries: 5
+
+routes:
+  start:  /download
+  status: /download/{id}
+  list:   /list
